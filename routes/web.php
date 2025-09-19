@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\WelcomePageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductsController;
 
 Auth::routes();
 
@@ -28,6 +30,13 @@ Route::get('/dashboard', function () {
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin/home', [HomeController::class, 'admin'])->name('admin.home');
+
+    //USERS
+    Route::get('/users', [AdminController::class, 'Users'])->name('admin.users');
+
+    //PRODUCTS
+    Route::get('/add-products', [ProductsController::class, 'ProductsPage'])->name('admin.productsPage');
+    Route::POST('/add-products', [ProductsController::class, 'StoreProducts'])->name('admin.addProduct');
 });
 
 Route::middleware('user')->group(function () {

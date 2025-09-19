@@ -26,6 +26,8 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="with-welcome-text">
@@ -184,7 +186,7 @@
                     <li class="nav-item nav-category">Overview</li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{ route('admin.users')}}">
                             <i class="fa-regular fa-circle-user me-4"></i>
                             <span class="menu-title">Users</span>
                         </a>
@@ -198,7 +200,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{ route('admin.productsPage')}}">
                             <i class="fa-solid fa-book me-4"></i>
                             <span class="menu-title">Products</span>
                         </a>
@@ -259,7 +261,6 @@
         </div>
         <!-- page-body-wrapper ends -->
     </div>
-
 
     <!-- SCRIPTS -->
     <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
